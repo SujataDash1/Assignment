@@ -1,0 +1,368 @@
+<testsuite failures="3" name="src/test/java/features/assignment2.feature" skipped="0" tests="9" time="16.361518">
+  <testcase classname="src.test.java.features.assignment2" name="'POST' : Auth Token Creation" time="2.338676">
+    <system-out>* url 'https://restful-booker.herokuapp.com' .............................. passed
+Given path 'auth' ......................................................... passed
+And header Content-Type = 'application/json' .............................. passed
+And request { "username" : "admin", "password" : "password123" } .......... passed
+When method POST .......................................................... passed
+Then status 200 ........................................................... passed</system-out>
+  </testcase>
+  <testcase classname="src.test.java.features.assignment2" name="'GET' : Retrieve All Booking Ids" time="2.100386">
+    <system-out>* url 'https://restful-booker.herokuapp.com' .............................. passed
+Given path 'auth' ......................................................... passed
+And header Content-Type = 'application/json' .............................. passed
+And request { "username" : "admin", "password" : "password123" } .......... passed
+When method POST .......................................................... passed
+Then status 200 ........................................................... passed
+* url 'https://restful-booker.herokuapp.com' .............................. passed
+Given path '/booking' ..................................................... passed
+When method GET ........................................................... passed
+Then status 200 ........................................................... passed
+* print response .......................................................... passed</system-out>
+  </testcase>
+  <testcase classname="src.test.java.features.assignment2" name="'GET' : Retrieve All Booking details by filtering with name" time="2.287686">
+    <system-out>* url 'https://restful-booker.herokuapp.com' .............................. passed
+Given path 'auth' ......................................................... passed
+And header Content-Type = 'application/json' .............................. passed
+And request { "username" : "admin", "password" : "password123" } .......... passed
+When method POST .......................................................... passed
+Then status 200 ........................................................... passed
+* url 'https://restful-booker.herokuapp.com' .............................. passed
+Given path '/booking' ..................................................... passed
+When method GET ........................................................... passed
+Then status 200 ........................................................... passed
+* print response .......................................................... passed
+* url 'https://restful-booker.herokuapp.com' .............................. passed
+* def query = { "username" : "John", "password" : "Smith" } ............... passed
+Given path '/booking' ..................................................... passed
+And params query .......................................................... passed
+When method GET ........................................................... passed
+Then status 200 ........................................................... passed
+* print response .......................................................... passed</system-out>
+  </testcase>
+  <testcase classname="src.test.java.features.assignment2" name="'GET' : Retrieve All Booking details by filtering with CheckIn/CheckOut Date" time="1.542704">
+    <system-out>* url 'https://restful-booker.herokuapp.com' .............................. passed
+Given path 'auth' ......................................................... passed
+And header Content-Type = 'application/json' .............................. passed
+And request { "username" : "admin", "password" : "password123" } .......... passed
+When method POST .......................................................... passed
+Then status 200 ........................................................... passed
+* url 'https://restful-booker.herokuapp.com' .............................. passed
+Given path '/booking' ..................................................... passed
+When method GET ........................................................... passed
+Then status 200 ........................................................... passed
+* print response .......................................................... passed
+* url 'https://restful-booker.herokuapp.com' .............................. passed
+* def query = { "username" : "John", "password" : "Smith" } ............... passed
+Given path '/booking' ..................................................... passed
+And params query .......................................................... passed
+When method GET ........................................................... passed
+Then status 200 ........................................................... passed
+* print response .......................................................... passed
+* url 'https://restful-booker.herokuapp.com' .............................. passed
+* def query = { "checkin" : "2018-01-01", "checkout" : "2019-01-01" } ..... passed
+Given path '/booking' ..................................................... passed
+And params query .......................................................... passed
+When method GET ........................................................... passed
+Then status 200 ........................................................... passed
+* print response .......................................................... passed</system-out>
+  </testcase>
+  <testcase classname="src.test.java.features.assignment2" name="'GET' : Retrieve Booking Information for particular booking ID" time="1.465668">
+    <system-out>* url 'https://restful-booker.herokuapp.com' .............................. passed
+Given path 'auth' ......................................................... passed
+And header Content-Type = 'application/json' .............................. passed
+And request { "username" : "admin", "password" : "password123" } .......... passed
+When method POST .......................................................... passed
+Then status 200 ........................................................... passed
+* url 'https://restful-booker.herokuapp.com' .............................. passed
+Given path '/booking' ..................................................... passed
+When method GET ........................................................... passed
+Then status 200 ........................................................... passed
+* print response .......................................................... passed
+* url 'https://restful-booker.herokuapp.com' .............................. passed
+* def query = { "username" : "John", "password" : "Smith" } ............... passed
+Given path '/booking' ..................................................... passed
+And params query .......................................................... passed
+When method GET ........................................................... passed
+Then status 200 ........................................................... passed
+* print response .......................................................... passed
+* url 'https://restful-booker.herokuapp.com' .............................. passed
+* def query = { "checkin" : "2018-01-01", "checkout" : "2019-01-01" } ..... passed
+Given path '/booking' ..................................................... passed
+And params query .......................................................... passed
+When method GET ........................................................... passed
+Then status 200 ........................................................... passed
+* print response .......................................................... passed
+* url 'https://restful-booker.herokuapp.com' .............................. passed
+Given path '/booking' ..................................................... passed
+And path bookingId = 2080 ................................................. passed
+And header Accept = 'application/json' .................................... passed
+When method GET ........................................................... passed
+Then status 200 ........................................................... passed
+* print response .......................................................... passed</system-out>
+  </testcase>
+  <testcase classname="src.test.java.features.assignment2" name="'POST' : Create new booking" time="1.538375">
+    <system-out>* url 'https://restful-booker.herokuapp.com' .............................. passed
+Given path 'auth' ......................................................... passed
+And header Content-Type = 'application/json' .............................. passed
+And request { "username" : "admin", "password" : "password123" } .......... passed
+When method POST .......................................................... passed
+Then status 200 ........................................................... passed
+* url 'https://restful-booker.herokuapp.com' .............................. passed
+Given path '/booking' ..................................................... passed
+When method GET ........................................................... passed
+Then status 200 ........................................................... passed
+* print response .......................................................... passed
+* url 'https://restful-booker.herokuapp.com' .............................. passed
+* def query = { "username" : "John", "password" : "Smith" } ............... passed
+Given path '/booking' ..................................................... passed
+And params query .......................................................... passed
+When method GET ........................................................... passed
+Then status 200 ........................................................... passed
+* print response .......................................................... passed
+* url 'https://restful-booker.herokuapp.com' .............................. passed
+* def query = { "checkin" : "2018-01-01", "checkout" : "2019-01-01" } ..... passed
+Given path '/booking' ..................................................... passed
+And params query .......................................................... passed
+When method GET ........................................................... passed
+Then status 200 ........................................................... passed
+* print response .......................................................... passed
+* url 'https://restful-booker.herokuapp.com' .............................. passed
+Given path '/booking' ..................................................... passed
+And path bookingId = 2080 ................................................. passed
+And header Accept = 'application/json' .................................... passed
+When method GET ........................................................... passed
+Then status 200 ........................................................... passed
+* print response .......................................................... passed
+* url 'https://restful-booker.herokuapp.com' .............................. passed
+* def jsonquery = ......................................................... passed
+Given path '/booking' ..................................................... passed
+And header Content-Type = 'application/json' .............................. passed
+And header Accept = 'application/json' .................................... passed
+And request jsonquery ..................................................... passed
+When method POST .......................................................... passed
+Then status 200 ........................................................... passed
+* print response .......................................................... passed
+* print response.bookingid ................................................ passed</system-out>
+  </testcase>
+  <testcase classname="src.test.java.features.assignment2" name="'PUT' : Update any booking" time="1.91762">
+    <failure message="assignment2.feature:88 - status code was: 403, expected: 200, response time: 1913, url: https://restful-booker.herokuapp.com/booking/2080, response: Forbidden">* url 'https://restful-booker.herokuapp.com' .............................. passed
+Given path 'auth' ......................................................... passed
+And header Content-Type = 'application/json' .............................. passed
+And request { "username" : "admin", "password" : "password123" } .......... passed
+When method POST .......................................................... passed
+Then status 200 ........................................................... passed
+* url 'https://restful-booker.herokuapp.com' .............................. passed
+Given path '/booking' ..................................................... passed
+When method GET ........................................................... passed
+Then status 200 ........................................................... passed
+* print response .......................................................... passed
+* url 'https://restful-booker.herokuapp.com' .............................. passed
+* def query = { "username" : "John", "password" : "Smith" } ............... passed
+Given path '/booking' ..................................................... passed
+And params query .......................................................... passed
+When method GET ........................................................... passed
+Then status 200 ........................................................... passed
+* print response .......................................................... passed
+* url 'https://restful-booker.herokuapp.com' .............................. passed
+* def query = { "checkin" : "2018-01-01", "checkout" : "2019-01-01" } ..... passed
+Given path '/booking' ..................................................... passed
+And params query .......................................................... passed
+When method GET ........................................................... passed
+Then status 200 ........................................................... passed
+* print response .......................................................... passed
+* url 'https://restful-booker.herokuapp.com' .............................. passed
+Given path '/booking' ..................................................... passed
+And path bookingId = 2080 ................................................. passed
+And header Accept = 'application/json' .................................... passed
+When method GET ........................................................... passed
+Then status 200 ........................................................... passed
+* print response .......................................................... passed
+* url 'https://restful-booker.herokuapp.com' .............................. passed
+* def jsonquery = ......................................................... passed
+Given path '/booking' ..................................................... passed
+And header Content-Type = 'application/json' .............................. passed
+And header Accept = 'application/json' .................................... passed
+And request jsonquery ..................................................... passed
+When method POST .......................................................... passed
+Then status 200 ........................................................... passed
+* print response .......................................................... passed
+* print response.bookingid ................................................ passed
+* url 'https://restful-booker.herokuapp.com' .............................. passed
+* def jsonquery = ......................................................... passed
+Given path '/booking' ..................................................... passed
+And path bookingId = 2080 ................................................. passed
+And header Content-Type = 'application/json' .............................. passed
+And header Accept = 'application/json' .................................... passed
+And request jsonquery ..................................................... passed
+When method PUT ........................................................... passed
+Then status 200 ........................................................... failed
+
+Stack Trace:
+com.intuit.karate.exception.KarateException: assignment2.feature:88 - status code was: 403, expected: 200, response time: 1913, url: https://restful-booker.herokuapp.com/booking/2080, response: Forbidden&#13;
+	at ✽.Then status 200 (assignment2.feature:88)&#13;
+
+* print response .......................................................... skipped</failure>
+  </testcase>
+  <testcase classname="src.test.java.features.assignment2" name="'PATCH' : Update any booking with a partial payload" time="1.585929">
+    <failure message="assignment2.feature:105 - status code was: 403, expected: 200, response time: 1581, url: https://restful-booker.herokuapp.com/booking/2080, response: Forbidden">* url 'https://restful-booker.herokuapp.com' .............................. passed
+Given path 'auth' ......................................................... passed
+And header Content-Type = 'application/json' .............................. passed
+And request { "username" : "admin", "password" : "password123" } .......... passed
+When method POST .......................................................... passed
+Then status 200 ........................................................... passed
+* url 'https://restful-booker.herokuapp.com' .............................. passed
+Given path '/booking' ..................................................... passed
+When method GET ........................................................... passed
+Then status 200 ........................................................... passed
+* print response .......................................................... passed
+* url 'https://restful-booker.herokuapp.com' .............................. passed
+* def query = { "username" : "John", "password" : "Smith" } ............... passed
+Given path '/booking' ..................................................... passed
+And params query .......................................................... passed
+When method GET ........................................................... passed
+Then status 200 ........................................................... passed
+* print response .......................................................... passed
+* url 'https://restful-booker.herokuapp.com' .............................. passed
+* def query = { "checkin" : "2018-01-01", "checkout" : "2019-01-01" } ..... passed
+Given path '/booking' ..................................................... passed
+And params query .......................................................... passed
+When method GET ........................................................... passed
+Then status 200 ........................................................... passed
+* print response .......................................................... passed
+* url 'https://restful-booker.herokuapp.com' .............................. passed
+Given path '/booking' ..................................................... passed
+And path bookingId = 2080 ................................................. passed
+And header Accept = 'application/json' .................................... passed
+When method GET ........................................................... passed
+Then status 200 ........................................................... passed
+* print response .......................................................... passed
+* url 'https://restful-booker.herokuapp.com' .............................. passed
+* def jsonquery = ......................................................... passed
+Given path '/booking' ..................................................... passed
+And header Content-Type = 'application/json' .............................. passed
+And header Accept = 'application/json' .................................... passed
+And request jsonquery ..................................................... passed
+When method POST .......................................................... passed
+Then status 200 ........................................................... passed
+* print response .......................................................... passed
+* print response.bookingid ................................................ passed
+* url 'https://restful-booker.herokuapp.com' .............................. passed
+* def jsonquery = ......................................................... passed
+Given path '/booking' ..................................................... passed
+And path bookingId = 2080 ................................................. passed
+And header Content-Type = 'application/json' .............................. passed
+And header Accept = 'application/json' .................................... passed
+And request jsonquery ..................................................... passed
+When method PUT ........................................................... passed
+Then status 200 ........................................................... failed
+
+Stack Trace:
+com.intuit.karate.exception.KarateException: assignment2.feature:88 - status code was: 403, expected: 200, response time: 1913, url: https://restful-booker.herokuapp.com/booking/2080, response: Forbidden&#13;
+	at ✽.Then status 200 (assignment2.feature:88)&#13;
+
+* print response .......................................................... skipped
+* url 'https://restful-booker.herokuapp.com' .............................. passed
+* def jsonquery = ......................................................... passed
+Given path '/booking' ..................................................... passed
+And path bookingId = 2080 ................................................. passed
+And header Content-Type = 'application/json' .............................. passed
+And header Accept = 'application/json' .................................... passed
+And request jsonquery ..................................................... passed
+When method PATCH ......................................................... passed
+Then status 200 ........................................................... failed
+
+Stack Trace:
+com.intuit.karate.exception.KarateException: assignment2.feature:105 - status code was: 403, expected: 200, response time: 1581, url: https://restful-booker.herokuapp.com/booking/2080, response: Forbidden&#13;
+	at ✽.Then status 200 (assignment2.feature:105)&#13;
+
+* print response .......................................................... skipped</failure>
+  </testcase>
+  <testcase classname="src.test.java.features.assignment2" name="'DELETE' : Delete any Booking" time="1.584473">
+    <failure message="assignment2.feature:113 - status code was: 403, expected: 200, response time: 1581, url: https://restful-booker.herokuapp.com/booking/2080, response: Forbidden">* url 'https://restful-booker.herokuapp.com' .............................. passed
+Given path 'auth' ......................................................... passed
+And header Content-Type = 'application/json' .............................. passed
+And request { "username" : "admin", "password" : "password123" } .......... passed
+When method POST .......................................................... passed
+Then status 200 ........................................................... passed
+* url 'https://restful-booker.herokuapp.com' .............................. passed
+Given path '/booking' ..................................................... passed
+When method GET ........................................................... passed
+Then status 200 ........................................................... passed
+* print response .......................................................... passed
+* url 'https://restful-booker.herokuapp.com' .............................. passed
+* def query = { "username" : "John", "password" : "Smith" } ............... passed
+Given path '/booking' ..................................................... passed
+And params query .......................................................... passed
+When method GET ........................................................... passed
+Then status 200 ........................................................... passed
+* print response .......................................................... passed
+* url 'https://restful-booker.herokuapp.com' .............................. passed
+* def query = { "checkin" : "2018-01-01", "checkout" : "2019-01-01" } ..... passed
+Given path '/booking' ..................................................... passed
+And params query .......................................................... passed
+When method GET ........................................................... passed
+Then status 200 ........................................................... passed
+* print response .......................................................... passed
+* url 'https://restful-booker.herokuapp.com' .............................. passed
+Given path '/booking' ..................................................... passed
+And path bookingId = 2080 ................................................. passed
+And header Accept = 'application/json' .................................... passed
+When method GET ........................................................... passed
+Then status 200 ........................................................... passed
+* print response .......................................................... passed
+* url 'https://restful-booker.herokuapp.com' .............................. passed
+* def jsonquery = ......................................................... passed
+Given path '/booking' ..................................................... passed
+And header Content-Type = 'application/json' .............................. passed
+And header Accept = 'application/json' .................................... passed
+And request jsonquery ..................................................... passed
+When method POST .......................................................... passed
+Then status 200 ........................................................... passed
+* print response .......................................................... passed
+* print response.bookingid ................................................ passed
+* url 'https://restful-booker.herokuapp.com' .............................. passed
+* def jsonquery = ......................................................... passed
+Given path '/booking' ..................................................... passed
+And path bookingId = 2080 ................................................. passed
+And header Content-Type = 'application/json' .............................. passed
+And header Accept = 'application/json' .................................... passed
+And request jsonquery ..................................................... passed
+When method PUT ........................................................... passed
+Then status 200 ........................................................... failed
+
+Stack Trace:
+com.intuit.karate.exception.KarateException: assignment2.feature:88 - status code was: 403, expected: 200, response time: 1913, url: https://restful-booker.herokuapp.com/booking/2080, response: Forbidden&#13;
+	at ✽.Then status 200 (assignment2.feature:88)&#13;
+
+* print response .......................................................... skipped
+* url 'https://restful-booker.herokuapp.com' .............................. passed
+* def jsonquery = ......................................................... passed
+Given path '/booking' ..................................................... passed
+And path bookingId = 2080 ................................................. passed
+And header Content-Type = 'application/json' .............................. passed
+And header Accept = 'application/json' .................................... passed
+And request jsonquery ..................................................... passed
+When method PATCH ......................................................... passed
+Then status 200 ........................................................... failed
+
+Stack Trace:
+com.intuit.karate.exception.KarateException: assignment2.feature:105 - status code was: 403, expected: 200, response time: 1581, url: https://restful-booker.herokuapp.com/booking/2080, response: Forbidden&#13;
+	at ✽.Then status 200 (assignment2.feature:105)&#13;
+
+* print response .......................................................... skipped
+* url 'https://restful-booker.herokuapp.com' .............................. passed
+Given path '/booking' ..................................................... passed
+And path bookingId = 2080 ................................................. passed
+And header Content-Type = 'application/json' .............................. passed
+When method DELETE ........................................................ passed
+Then status 200 ........................................................... failed
+
+Stack Trace:
+com.intuit.karate.exception.KarateException: assignment2.feature:113 - status code was: 403, expected: 200, response time: 1581, url: https://restful-booker.herokuapp.com/booking/2080, response: Forbidden&#13;
+	at ✽.Then status 200 (assignment2.feature:113)&#13;
+
+* print response .......................................................... skipped
+And match response == 'OK' ................................................ skipped</failure>
+  </testcase>
+</testsuite>
